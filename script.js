@@ -3,30 +3,37 @@
 /* Play a single round of RPS 
 computerPlay() will randomly return Rock Paper or Scissors and store it in a variable computerPick
 
-The player will input a value stored in variable playerPick.
+Game() function will take computerPick and a player input via console. It will compare the two values computerPick and playerPick and return a string about who won.
+    If computer picked rock
+        If player picked paper, he wins
+        If player picked rock, tie
+        If player picked scissors, he loses
+    
+    If computer picked paper
+        If player picked scissors, he wins
+        If player picked paper, tie
+        If player picked rock, he loses
 
-compare() will compare the two values computerPick and playerPick and return a string about who won
-    paper beats rock
-    rock beats scissors
-    scissors beats paper
+    If computer picked scissors
+        If player picked rock, he wins
+        If player picked scissors, tie
+        If player picked paper, he loses
 
     */
 
-let computerPick = "";
 
 function computerPlay() {
     let i = Math.floor(Math.random() * 3) + 1;
     if (i == 1) {
-        computerPick = "Rock";
+        return "Rock";
     } else if (i == 2) {
-        computerPick = "Paper";
+        return "Paper";
     } else {
-        computerPick = "Scissors";
+        return "Scissors";
     }
 }
 
-computerPlay();
-console.log(computerPick);
+
 
 
 
