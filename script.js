@@ -33,7 +33,39 @@ function computerPlay() {
     }
 }
 
+let computerPick = computerPlay();
+let playerPick = "Scissors";
 
+function playRound(computerPick, playerPick) {
+    if (computerPick === "Rock") {
+        if (playerPick === "Paper") {
+            return "Paper beats Rock. You win!!!";
+        } else if (playerPick === "Rock") {
+            return "Rock and Rock -- You tie. Play again!";
+        } else {
+            return "Rock beats Scissors. You lose ...";
+        }
+    }
 
+    if (computerPick === "Paper") {
+        if (playerPick === "Scissors") {
+            return "Scissors beats Paper. You win!!!";
+        } else if (playerPick === "Paper") {
+            return "Paper and Paper -- You tie. Play again!";
+        } else {
+            return "Paper beats Rock. You lose ...";
+        }
+    }
 
+    if (computerPick === "Scissors") {
+        if (playerPick === "Rock") {
+            return "Rock beats Scissors. You win!!!";
+        } else if (playerPick === "Scissors") {
+            return "Scissors and Scissors -- You tie. Play again!";
+        } else {
+            return "Scissors beat Paper. You lose ...";
+        }
+    }
+}
 
+console.log(playRound(computerPick, playerPick));
