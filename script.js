@@ -11,8 +11,10 @@ function computerPlay() {
     }
 }
 
-let computerPick = computerPlay();
-let playerPick = "pApER";
+let computerPick = "";
+let playerPick = "";
+let computerWins = 0;
+let playerWins = 0;
 
 function playRound(computerPick, playerPick) {
     computerPick = computerPick.toLowerCase();
@@ -20,36 +22,42 @@ function playRound(computerPick, playerPick) {
 
     if (computerPick === "rock") {
         if (playerPick === "paper") {
+            playerWins++;
             return "Paper beats Rock. You win!!!";
         } else if (playerPick === "rock") {
             return "Rock and Rock -- You tie. Play again!";
         } else {
+            computerWins++;
             return "Rock beats Scissors. You lose ...";
         }
     }
 
     if (computerPick === "paper") {
         if (playerPick === "scissors") {
+            playerWins++;
             return "Scissors beats paper. You win!!!";
         } else if (playerPick === "paper") {
             return "Paper and Paper -- You tie. Play again!";
         } else {
+            computerWins++;
             return "Paper beats Rock. You lose ...";
         }
     }
 
     if (computerPick === "scissors") {
         if (playerPick === "rock") {
+            playerWins++;
             return "Rock beats Scissors. You win!!!";
         } else if (playerPick === "scissors") {
             return "Scissors and Scissors -- You tie. Play again!";
         } else {
+            computerWins++;
             return "Scissors beat Paper. You lose ...";
         }
     }
 }
 
-console.log(playRound(computerPick, playerPick));
+
 
 // game() will run playRound() 5 times
 // it will get a new computerPick each time with computerPlay()
@@ -59,3 +67,21 @@ console.log(playRound(computerPick, playerPick));
 // it will call winner() at the end of 5 games to declare an overall winner
 
 // winner() will compare computerWins and playerWins and console log a message 
+
+function game() {
+    for (let i = 1; i <=5; i++) {
+        console.log(playRound(computerPlay(), prompt("Rock, Paper, or Scissors?")));
+    }
+    winner(computerWins, playerWins);
+}
+
+function winner(computerWins, playerWins) {
+    if (computerWins > playerWins) {
+        console.log("You lose by " + computerWins + " to " + playerWins + ". The computer is far superior.");
+    } else if (playerWins > computerWins) {
+        console.log("You win by " + playerWins + " to " + computerWins + ". You are the superior being!");
+    } else if (computerWins == playerWins) {
+        console.log("It was a tie!!!");
+    }
+}
+game();
