@@ -11,8 +11,8 @@ function computerPlay() {
     }
 }
 
-let computerPick = "";
-let playerPick = "";
+// let computerPick = "";
+// let playerPick = "";
 let computerWins = 0;
 let playerWins = 0;
 
@@ -57,16 +57,11 @@ function playRound(computerPick, playerPick) {
     }
 }
 
+const rock = document.querySelector('.rock');
+const paper = document.querySelector('.paper');
+const scissors = document.querySelector('.scissors');
 
-
-// game() will run playRound() 5 times
-// it will get a new computerPick each time with computerPlay()
-// it will get a new playerPick each time with prompt();
-// it will use a return value from playRound to tally computer and player total wins and losses
-// it will also console log the result of each match
-// it will call winner() at the end of 5 games to declare an overall winner
-
-// winner() will compare computerWins and playerWins and console log a message 
+rock.addEventListener('click', playRound(computerPlay(), "Rock"));
 
 function game() {
     for (let i = 1; i <=5; i++) {
@@ -84,4 +79,4 @@ function winner(computerWins, playerWins) {
         console.log("It was a tie!!!");
     }
 }
-game();
+// game();
