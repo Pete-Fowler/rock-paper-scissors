@@ -1,5 +1,23 @@
 body {
+    background-image: url(./images/background.jpg);
+    background-size: cover;
     background-color: rgb(78, 71, 71);
+    font-family: 'Lucida Sans', monospace;
+}
+
+.button-box {
+    display: flex;
+    justify-content: space-around;
+    gap: 8px;
+}
+
+button {
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+    width: 25%;
+    height: auto;
+    border-radius: 8px;
 }
 
 img {
@@ -9,30 +27,21 @@ img {
     height: 100%;
 }
 
-.button-box {
-    display: flex;
-    justify-content: space-around;
-    gap: 8px;
-}
-
 h1, h3 {
     text-align: center;
     color: white;
 }
 
-button {
-    padding: 0px;
-    border: 0px;
-    margin: 0px;
-    width: 25%;
-    height: 25%;
-    background-color: rgb(78, 71, 71)
+h1 {
+    font-size: 2.5em;
+    font-weight: 800;
 }
 
 .score-banner {
     text-align: center;
     color: white;
     font-size: 2em;
+    padding: .2em;
 }
 
 .narrative-banner {
@@ -40,4 +49,6 @@ button {
     color: white;
     font-size: 2.2em;
     font-weight: 700;
+    padding: .2em;
+    padding-top: .8em;
 }
