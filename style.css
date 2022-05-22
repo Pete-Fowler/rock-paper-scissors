@@ -42,11 +42,17 @@ h1 {
     font-weight: 800;
 }
 
+@keyframes fade-in {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
 .score-banner {
     text-align: center;
     color: white;
     font-size: 2em;
     padding: .2em;
+    animation: fade-in 5s;
 }
 
 .narrative-banner {
@@ -56,4 +62,5 @@ h1 {
     font-weight: 700;
     padding: .2em;
     padding-top: .8em;
+    animation: fade-in 5s;
 }
