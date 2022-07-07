@@ -27,6 +27,7 @@ let rounds = 1;
 const round = document.querySelector('.narrative-banner');
 const score = document.querySelector('.score-banner');
 
+
 // main function with game logic, displaying score & narrative
 function playRound(computerPick, playerPick) {
     if (rounds < 5) {
@@ -49,7 +50,7 @@ function playRound(computerPick, playerPick) {
         if ((playerPick === 'Rock' && computerPick === 'Rock') || (playerPick === 
             'Paper' && computerPick === 'Paper') || (playerPick === 'Scissors' && 
             computerPick === 'Scissors')) {
-                rounds++;
+                rounds++; 
                 round.textContent = `It's a tie! ${playerPick} and ${computerPick} ...`;
             }
             score.textContent = `Player: ${playerWins} | Computer: ${computerWins}`;
